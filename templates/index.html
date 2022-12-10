@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountAPI</title>
+    <!-- <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script> -->
+    <script src="https://api.countapi.xyz/hit/templates.index.html/visits?callback=liveViews" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(29, 29, 29);
+            color: blanchedalmond;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This page got <span id="visits"></span> views.</h1>
+    <script>
+        function liveViews(response) {
+            document.getElementById('visits').innerText = response.value;
+        }
+// The function is called in the CDN on HTML.
+    </script>
+
+</body>
+
+</html>
